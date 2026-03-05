@@ -1,0 +1,2 @@
+add_subdirectory(vsomeip_event)
+add_subdirectory(vsomeip_methods)

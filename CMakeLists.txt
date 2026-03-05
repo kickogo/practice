@@ -26,10 +26,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #     add_compile_options(-Wall -Wextra)
 # endif()
 
-# ===================== 添加所有子模块 =====================
-# 添加选择排序模块
-add_subdirectory(src/sort_practice/sort_select)
-# 添加vsomeip事件模块（按需添加）
-# add_subdirectory(src/vsomeip_practice/vsomeip_event)
-# 添加vsomeip方法模块（按需添加）
-# add_subdirectory(src/vsomeip_practice/vsomeip_methods)
+
+add_subdirectory(src)
