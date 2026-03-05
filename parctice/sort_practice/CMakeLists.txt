@@ -1,0 +1,6 @@
+add_subdirectory(sort_select)
+add_subdirectory(sort_bubble)
+add_subdirectory(sort_insert)
+add_subdirectory(sort_fast)
+add_subdirectory(sort_merge)
+add_subdirectory(sort_heap)
