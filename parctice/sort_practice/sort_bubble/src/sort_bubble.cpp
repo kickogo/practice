@@ -4,13 +4,9 @@
 
 // 选择排序（整数升序，核心逻辑）
 void sort_bubble(std::vector<int> &arr) {
-  for (int i = 0; i < arr.size(); i++) {
-
+  for (int i = 0; i < arr.size(); i++) { //趟数
     for (int j = 0; j < arr.size() - 1 - i; j++) {
       if (arr[j] > arr[j+1]) {
-        // int temp = arr[j];
-        // arr[j] = arr[j+1];
-        // arr[j+1] = temp;
         std::swap(arr[j],arr[j+1]);
       }
     }

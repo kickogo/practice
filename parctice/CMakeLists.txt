@@ -1,2 +1,3 @@
 add_subdirectory(sort_practice)
-# add_subdirectory(vsomeip_parctice)
+add_subdirectory(stl)
+add_subdirectory(code_from_scratch)

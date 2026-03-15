@@ -6,9 +6,8 @@ void select_sort(std::vector<int> &arr) {
   // 空数组/单元素数组直接返回
   if (arr.size() <= 1)
     return;
-
   // 外层循环：确定第i个位置的最小元素
-  for (int i = 0; i < arr.size() - 1; ++i) {
+  for (int i = 0; i < arr.size() - 1; ++i) { // 即将插入最小元素的位置
     int min_idx = i; // 假设当前i是最小元素下标
     // 内层循环：找i之后的最小元素
     for (int j = i + 1; j < arr.size(); ++j) {
