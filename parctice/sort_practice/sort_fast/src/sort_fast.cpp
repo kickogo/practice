@@ -1,24 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <algorithm> // std::swap
-
-// 【新增】打印分区过程（直观看到基准和数组变化）
-void print_partition(const std::vector<int>& arr, int left, int right, int pivot_val) {
-    std::cout << "当前处理区间: [" << left << "," << right << "]，基准值: " << pivot_val << "，数组状态: ";
-    for (int num : arr) {
-        std::cout << num << " ";
-    }
-    std::cout << std::endl;
-}
-
 // 分区函数：直观版（注释更详细，步骤更清晰）
 int partition(std::vector<int>& arr, int left, int right) {
     // 1. 选择基准（这里仍选最右侧，标注清楚目的）
     int pivot_val = arr[right]; // 基准值：选区间最后一个元素（简单易理解）
     int small_idx = left - 1;   // 「小于基准区」的右边界（初始在区间外）
 
-    // 打印分区前状态（直观看到基准）
-    print_partition(arr, left, right, pivot_val);
+  
 
     // 2. 遍历区间[left, right-1]，划分「小于基准区」和「大于基准区」
     for (int current_idx = left; current_idx < right; ++current_idx) {
@@ -33,12 +22,6 @@ int partition(std::vector<int>& arr, int left, int right) {
     int pivot_final_idx = small_idx + 1;
     std::swap(arr[pivot_final_idx], arr[right]);
 
-    // 打印分区后状态（直观看到基准归位）
-    std::cout << "分区后，基准最终位置: " << pivot_final_idx << "，数组状态: ";
-    for (int num : arr) {
-        std::cout << num << " ";
-    }
-    std::cout << "\n-------------------------" << std::endl;
 
     return pivot_final_idx;
 }
@@ -47,9 +30,6 @@ int partition(std::vector<int>& arr, int left, int right) {
 void quick_sort(std::vector<int>& arr, int left, int right) {
     // 递归终止条件：区间长度≤1（天然有序）
     if (left >= right) {
-        if (left == right) {
-            std::cout << "区间[" << left << "," << right << "]只有1个元素，无需排序\n";
-        }
         return;
     }
 
