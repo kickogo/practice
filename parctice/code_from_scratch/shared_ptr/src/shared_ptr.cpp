@@ -38,14 +38,14 @@ public:
     return *this;
   }
 
-  SharedPtr(SharedPtr &&other) noexcept{
+  SharedPtr(SharedPtr &&other) noexcept {
     ptr_ = other.ptr_;
     refer_count_ = other.refer_count_;
     other.ptr_ = nullptr;
     other.refer_count_ = nullptr;
   }
 
-  SharedPtr &operator=(SharedPtr &&other) noexcept{
+  SharedPtr &operator=(SharedPtr &&other) noexcept {
     if (this != &other) {
       Release();
       ptr_ = other.ptr_;
@@ -92,7 +92,7 @@ public:
 private:
   void Release() {
     if (refer_count_ != nullptr) {
-      if ((refer_count_->fetch_sub(1,std::memory_order_relaxed) -1) == 0) {
+      if ((refer_count_->fetch_sub(1, std::memory_order_relaxed) - 1) == 0) {
         delete ptr_;
         delete refer_count_;
       }
